@@ -14,20 +14,20 @@ import { FaceSnap } from '../models/face-snap.model';
 export class FaceSnapComponent implements OnInit {
   @Input() faceSnap!: FaceSnap;
   buttonText!: string;
-  @Input() snaped: boolean = false;
+  @Input() snapped: boolean = false;
 
   ngOnInit() {
     this.buttonText = 'Oh snaps';
   }
 
   onSnap() {
-    if(this.snaped) {
+    if(this.snapped) {
       this.faceSnap.snaps--;
-      this.snaped = false;
+      this.snapped = false;
       this.buttonText = 'Oh Snaps';
     } else {
       this.faceSnap.snaps++;
-      this.snaped = true;
+      this.snapped = true;
       this.buttonText = 'UnSnaps!';
     }
     
